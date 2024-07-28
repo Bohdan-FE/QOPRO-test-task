@@ -28,9 +28,9 @@ function Table() {
             </div>
             <div className={styles.list_container}>
                 <AnimatePresence>
-                    {tier === '1' && <TaleList key={1} data={data1} />}
-                    {tier === '2' && <TaleList key={2} data={data2} />}
-                    {tier === '3' && <TaleList key={3} data={data2} />}
+                    {tier === '1' && <TaleList key={1} data={data1} title='Tier1' />}
+                    {tier === '2' && <TaleList key={2} data={data2} title='Tier2' />}
+                    {tier === '3' && <TaleList key={3} data={data2} title='Tier3' />}
                 </AnimatePresence>
             </div>
         </section>

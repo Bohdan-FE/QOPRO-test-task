@@ -5,7 +5,7 @@ import { Data } from '../../../types/types';
 import { motion } from 'framer-motion';
 
 
-function TaleList({ data }: { data: Data[] }) {
+function TaleList({ data, title }: { data: Data[], title: string }) {
 
     const list = {
         visible: {
@@ -33,7 +33,7 @@ function TaleList({ data }: { data: Data[] }) {
             animate="visible"
             exit='exit'
             variants={list}>
-            {data.map(item => <TableItem key={item.address} name={item.name} address={item.address} />)}
+            {data.map(item => <TableItem key={item.address} name={item.name} address={item.address} title={title} />)}
             <Svg className={styles.svg} />
         </motion.ul>
     );
