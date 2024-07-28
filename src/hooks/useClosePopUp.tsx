@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-function useClosePopUp({ setIsActive }: { setIsActive: React.Dispatch<React.SetStateAction<boolean>> }) {
+function useClosePopUp() {
     const ref = useRef<HTMLDivElement>(null)
+    const [isActive, setIsActive] = useState(false)
 
     useEffect(() => {
         const handler = (e: MouseEvent) => {
@@ -18,7 +19,7 @@ function useClosePopUp({ setIsActive }: { setIsActive: React.Dispatch<React.SetS
     }, [ref, setIsActive]);
 
 
-    return ref;
+    return { ref, isActive, setIsActive };
 }
 
 export default useClosePopUp;

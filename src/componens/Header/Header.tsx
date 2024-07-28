@@ -5,15 +5,13 @@ import { ReactComponent as Button } from '../../styles/icons/header-button.svg'
 import { useDispatch, useSelector } from 'react-redux';
 import { userSelector } from '../../redux/selectors';
 import { formatNumber, shortenAddress } from '../../helpers/shortenString';
-import { useState } from 'react';
 import { changeUser } from '../../redux/userSlice';
 import { AnimatePresence, motion } from 'framer-motion';
 
 function Header() {
-    const [isActive, setIsActive] = useState(false)
     const { address, balance } = useSelector(userSelector)
     const dispatch = useDispatch()
-    const ref = useClosePopUp({ setIsActive })
+    const { ref, isActive, setIsActive } = useClosePopUp()
 
     return (
         <header className={styles.header}>
